@@ -14,6 +14,8 @@ public class Burger implements MenuItem {
             return 5;
         } else if (burgerOption.equals(BurgerOption.CHEESEBURGER)) {
             return 6;
+        } else if (burgerOption.equals(BurgerOption.BACONCHEESEBURGER)) {
+            return 8;
         }
         return 0;
     }

@@ -24,4 +24,12 @@ public class BurgerTest {
                 .isEqualTo(6);
     }
 
+    @Test
+    public void baconCheeseburgerCost8() throws Exception {
+        Burger burger = new Burger(BurgerOption.BACONCHEESEBURGER);
+
+        assertThat(burger.price())
+                .isEqualTo(8);
+    }
+
 }
