@@ -6,6 +6,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import org.junit.jupiter.api.Test;
 
 public class ToppingsTest {
+
     @Test
     public void noToppingsIsZeroPrice() {
         Toppings toppings = new Toppings();
