@@ -8,6 +8,10 @@ public class Burger implements MenuItem {
         burgerOption = theBurgerOption;
     }
 
+    public Burger() {
+    burgerOption = BurgerOption.REGULAR;
+    }
+
     @Override
     public int price() {
         if (burgerOption.equals(BurgerOption.REGULAR)) {
