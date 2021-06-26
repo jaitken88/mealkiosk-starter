@@ -23,4 +23,8 @@ public class Toppings {
     public void add(BurgerTopping burgerTopping) {
         burgerToppingList.add(burgerTopping);
     }
+
+    public List<BurgerTopping> getToppingsList() {
+        return burgerToppingList;
+    }
 }
