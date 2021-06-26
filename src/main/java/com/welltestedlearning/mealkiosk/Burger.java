@@ -27,7 +27,7 @@ public class Burger implements MenuItem {
     @Override
     public String toString() {
         return "Burger {" +
-                "burgerOption=" + burgerOption +
-                '}';
+            "burgerOption=" + burgerOption +
+            '}';
     }
 }
