@@ -16,7 +16,7 @@ public class MealOrderTest {
 
     @Test
     public void mealWithCheeseBurgerIs6() throws Exception {
-        MealOrder mealOrder = new MealOrder(BurgerOption.CHEESEBURGER);
+        MealOrder mealOrder = new MealOrder(BurgerToppings.CHEESE);
 
         assertThat(mealOrder.price())
                 .isEqualTo(6);
@@ -24,7 +24,7 @@ public class MealOrderTest {
 
     @Test
     public void mealWithRegularBurgerLargeDrinkCosts7() throws Exception {
-        MealOrder mealOrder = new MealOrder(BurgerOption.REGULAR, DrinkOption.LARGE);
+        MealOrder mealOrder = new MealOrder(new Burger(), DrinkOption.LARGE);
 
         assertThat(mealOrder.price())
                 .isEqualTo(7);

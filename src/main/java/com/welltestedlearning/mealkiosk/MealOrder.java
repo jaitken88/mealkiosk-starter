@@ -6,8 +6,12 @@ import java.util.List;
 public class MealOrder {
     private List<MenuItem> items = new ArrayList<>();
 
-    public static MealOrder createBurgerOnlyOrder(BurgerOption burgerOption) {
-        return new MealOrder(burgerOption);
+    public static MealOrder createBurgerOnlyOrder(BurgerToppings burgerToppings) {
+        return new MealOrder(burgerToppings);
+    }
+
+    public static MealOrder createBurgerOnlyOrder(Burger burger){
+        return new MealOrder(burger);
     }
 
     public static void main(String[] args) {
@@ -15,15 +19,19 @@ public class MealOrder {
         drinkOrder.addDrink(Drink.DRINK_LARGE);
         drinkOrder.display();
 
-        MealOrder burgerOrder = createBurgerOnlyOrder(BurgerOption.REGULAR);
+        MealOrder burgerOrder = createBurgerOnlyOrder(new Burger());
         burgerOrder.display();
     }
 
     public MealOrder() {
     }
 
-    public MealOrder(BurgerOption burgerOption) {
-        addBurger(burgerOption);
+    public MealOrder(Burger burger) {
+        addBurger(burger);
+    }
+
+    public MealOrder(BurgerToppings burgerToppings) {
+        addBurger(burgerToppings);
     }
 
     public void addDrink(String drinkSize) {
@@ -34,12 +42,21 @@ public class MealOrder {
         items.add(new Fries(friesSize));
     }
 
-    public void addBurger(BurgerOption burgerOption) {
-        items.add(new Burger(burgerOption));
+    public void addBurger(Burger burger) {
+        items.add(burger);
     }
 
-    public MealOrder(BurgerOption burger,
+    public void addBurger(BurgerToppings burgerToppings) {
+        items.add(new Burger(burgerToppings));
+    }
+
+    public MealOrder(BurgerToppings burger,
                      DrinkOption drink) {
+        addBurger(burger);
+        addDrink(drink.name().toLowerCase());
+    }
+
+    public MealOrder(Burger burger, DrinkOption drink) {
         addBurger(burger);
         addDrink(drink.name().toLowerCase());
     }
