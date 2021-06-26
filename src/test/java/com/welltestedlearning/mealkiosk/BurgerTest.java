@@ -28,20 +28,48 @@ public class BurgerTest {
 
     @Disabled
     @Test
-    public void baconCheeseburgerCost8() throws Exception {
+    public void baconBurgerCost7() throws Exception {
         Burger burger = new Burger(BurgerToppings.BACON);
+
+        assertThat(burger.price())
+            .isEqualTo(7);
+    }
+
+    @Test
+    public void burgerWithBaconAndRegularBurgerCost12() throws Exception {
+        Burger burger1 = new Burger(BurgerToppings.BACON);
+        Burger burger2 = new Burger();
+
+        assertThat(burger1.price() + burger2.price())
+            .isEqualTo(12);
+    }
+
+    @Test
+    public void burgerAddToppingCheeseCost6() throws Exception {
+        Burger burger = new Burger();
+        burger.addTopping(BurgerToppings.CHEESE);
+
+        assertThat(burger.price())
+            .isEqualTo(6);
+    }
+
+    @Test
+    public void burgerAddToppingCheeseAndBaconCost8() throws Exception {
+        Burger burger = new Burger();
+        burger.addTopping(BurgerToppings.CHEESE, BurgerToppings.BACON);
 
         assertThat(burger.price())
             .isEqualTo(8);
     }
 
     @Test
-    public void baconCheeseBurgerAndRegularBurgerCost11() throws Exception {
-        Burger burger1 = new Burger(BurgerToppings.BACON);
-        Burger burger2 = new Burger();
+    public void burgerAddToppingTwoCheeseCost7() throws Exception {
+        Burger burger = new Burger();
+        burger.addTopping(BurgerToppings.CHEESE, BurgerToppings.CHEESE);
 
-        assertThat(burger1.price() + burger2.price())
-            .isEqualTo(11);
+        assertThat(burger.price())
+            .isEqualTo(7);
     }
+
 
 }

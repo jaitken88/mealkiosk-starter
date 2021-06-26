@@ -1,8 +1,8 @@
 package com.welltestedlearning.mealkiosk;
 
-import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 public class FriesTest {
 
@@ -11,7 +11,7 @@ public class FriesTest {
         Fries fries = new Fries(Fries.REGULAR);
 
         assertThat(fries.price())
-                .isEqualTo(3);
+            .isEqualTo(3);
     }
 
     @Test
@@ -19,7 +19,7 @@ public class FriesTest {
         Fries fries = new Fries(Fries.LARGE);
 
         assertThat(fries.price())
-                .isEqualTo(5);
+            .isEqualTo(5);
     }
 
 }

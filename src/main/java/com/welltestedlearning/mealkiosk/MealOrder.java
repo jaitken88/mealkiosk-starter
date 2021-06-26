@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MealOrder {
-    private List<MenuItem> items = new ArrayList<>();
+
+    private final List<MenuItem> items = new ArrayList<>();
 
     public static MealOrder createBurgerOnlyOrder(BurgerToppings burgerToppings) {
         return new MealOrder(burgerToppings);
     }
 
-    public static MealOrder createBurgerOnlyOrder(Burger burger){
+    public static MealOrder createBurgerOnlyOrder(Burger burger) {
         return new MealOrder(burger);
     }
 
@@ -51,7 +52,7 @@ public class MealOrder {
     }
 
     public MealOrder(BurgerToppings burger,
-                     DrinkOption drink) {
+        DrinkOption drink) {
         addBurger(burger);
         addDrink(drink.name().toLowerCase());
     }
