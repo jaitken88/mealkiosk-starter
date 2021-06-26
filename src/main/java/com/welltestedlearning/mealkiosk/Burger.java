@@ -6,14 +6,14 @@ import java.util.List;
 
 public class Burger implements MenuItem {
 
-    private BurgerToppings burgerToppings;
+    private BurgerTopping burgerTopping;
 
-    private final List<BurgerToppings> burgerToppingsList = new ArrayList<>();
+    private final List<BurgerTopping> burgerToppingList = new ArrayList<>();
 
     private int price = 5;
 
-    public Burger(BurgerToppings... theBurgerToppings) {
-        Collections.addAll(burgerToppingsList, theBurgerToppings);
+    public Burger(BurgerTopping... theBurgerToppings) {
+        Collections.addAll(burgerToppingList, theBurgerToppings);
 
     }
 
@@ -22,25 +22,25 @@ public class Burger implements MenuItem {
 
     @Override
     public int price() {
-        for (BurgerToppings toppings : burgerToppingsList) {
+        for (BurgerTopping toppings : burgerToppingList) {
             price += toppings.price();
         }
         return price;
     }
 
     public void display() {
-        System.out.println("Burger: " + burgerToppings);
+        System.out.println("Burger: " + burgerTopping);
     }
 
     @Override
     public String toString() {
         return "Burger {" +
-            "burgerOption=" + burgerToppings +
+            "burgerOption=" + burgerTopping +
             '}';
     }
 
-    public void addTopping(BurgerToppings... burgerToppings) {
-        Collections.addAll(burgerToppingsList, burgerToppings);
+    public void addTopping(BurgerTopping... burgerToppings) {
+        Collections.addAll(burgerToppingList, burgerToppings);
 
     }
 }

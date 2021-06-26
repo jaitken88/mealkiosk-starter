@@ -7,8 +7,8 @@ public class MealOrder {
 
     private final List<MenuItem> items = new ArrayList<>();
 
-    public static MealOrder createBurgerOnlyOrder(BurgerToppings burgerToppings) {
-        return new MealOrder(burgerToppings);
+    public static MealOrder createBurgerOnlyOrder(BurgerTopping burgerTopping) {
+        return new MealOrder(burgerTopping);
     }
 
     public static MealOrder createBurgerOnlyOrder(Burger burger) {
@@ -31,8 +31,8 @@ public class MealOrder {
         addBurger(burger);
     }
 
-    public MealOrder(BurgerToppings burgerToppings) {
-        addBurger(burgerToppings);
+    public MealOrder(BurgerTopping burgerTopping) {
+        addBurger(burgerTopping);
     }
 
     public void addDrink(String drinkSize) {
@@ -47,11 +47,11 @@ public class MealOrder {
         items.add(burger);
     }
 
-    public void addBurger(BurgerToppings burgerToppings) {
-        items.add(new Burger(burgerToppings));
+    public void addBurger(BurgerTopping burgerTopping) {
+        items.add(new Burger(burgerTopping));
     }
 
-    public MealOrder(BurgerToppings burger,
+    public MealOrder(BurgerTopping burger,
         DrinkOption drink) {
         addBurger(burger);
         addDrink(drink.name().toLowerCase());
