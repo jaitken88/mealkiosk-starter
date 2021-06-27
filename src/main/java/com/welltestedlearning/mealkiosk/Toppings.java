@@ -27,4 +27,11 @@ public class Toppings {
     public List<BurgerTopping> getToppingsList() {
         return burgerToppingList;
     }
+
+    @Override
+    public String toString() {
+        return "Toppings{" +
+            "toppings=" + burgerToppingList.toString() +
+            '}';
+    }
 }

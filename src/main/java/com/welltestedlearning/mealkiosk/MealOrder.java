@@ -1,6 +1,7 @@
 package com.welltestedlearning.mealkiosk;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MealOrder {
@@ -22,6 +23,10 @@ public class MealOrder {
 
         MealOrder burgerOrder = createBurgerOnlyOrder(new Burger());
         burgerOrder.display();
+    }
+
+    public MealOrder(MenuItem menuItem) {
+        items.add(menuItem);
     }
 
     public MealOrder() {
@@ -57,8 +62,8 @@ public class MealOrder {
         addDrink(drink.name().toLowerCase());
     }
 
-    public MealOrder(Burger burger, DrinkOption drink) {
-        addBurger(burger);
+    public MealOrder(MenuItem menuItem, DrinkOption drink) {
+        items.add(menuItem);
         addDrink(drink.name().toLowerCase());
     }
 
@@ -75,7 +80,11 @@ public class MealOrder {
         for (MenuItem item : items) {
             item.display();
         }
-        System.out.println(price());
+        System.out.println("Price: " + price());
+    }
+
+    public void addItem(MenuItem... menuItem) {
+        Collections.addAll(items, menuItem);
     }
 }
 

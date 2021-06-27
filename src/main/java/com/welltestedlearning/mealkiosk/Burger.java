@@ -2,8 +2,6 @@ package com.welltestedlearning.mealkiosk;
 
 public class Burger implements MenuItem {
 
-    private BurgerTopping burgerTopping;
-
     private final Toppings toppings = new Toppings();
 
     private int price = 5;
@@ -28,13 +26,13 @@ public class Burger implements MenuItem {
     }
 
     public void display() {
-        System.out.println("Burger: " + burgerTopping);
+        System.out.println("Burger: " + toppings.getToppingsList().toString());
     }
 
     @Override
     public String toString() {
         return "Burger {" +
-            "burgerOption=" + burgerTopping +
+            "burgerOption=" + toppings.getToppingsList().toString() +
             '}';
     }
 
