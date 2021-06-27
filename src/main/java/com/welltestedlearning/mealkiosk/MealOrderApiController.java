@@ -9,6 +9,10 @@ public class MealOrderApiController {
 
     @GetMapping("/api/mealorder")
     public String mealOrder(@RequestParam("burger") String burgerOrderText) {
-        return "Your order: " + burgerOrderText;
+        MealBuilder mealBuilder = new MealBuilder();
+        mealBuilder.addBurgerString(burgerOrderText);
+
+        MealOrder mealOrder = mealBuilder.build();
+        return "Your order: " + mealOrder;
     }
 }

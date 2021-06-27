@@ -31,9 +31,8 @@ public class Burger implements MenuItem {
 
     @Override
     public String toString() {
-        return "Burger {" +
-            "burgerOption=" + toppings.getToppingsList().toString() +
-            '}';
+        return "Burger: " +
+            "Toppings: " + toppings.getToppingsList().toString();
     }
 
     public void addTopping(BurgerTopping... burgerToppings) {

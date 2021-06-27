@@ -77,14 +77,26 @@ public class MealOrder {
     }
 
     public void display() {
-        for (MenuItem item : items) {
-            item.display();
+        for (MenuItem menuItem : items) {
+            menuItem.display();
         }
         System.out.println("Price: " + price());
     }
 
     public void addItem(MenuItem... menuItem) {
         Collections.addAll(items, menuItem);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (MenuItem menuItem : items) {
+            stringBuilder.append(menuItem);
+            if(items.size()>1) {
+                stringBuilder.append(", ");
+            }
+        }
+        return stringBuilder.toString();
     }
 }
 
