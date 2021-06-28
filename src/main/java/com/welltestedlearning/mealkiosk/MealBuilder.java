@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class MealBuilder {
 
-    private List<BurgerTopping> burgerToppingList = new ArrayList<>();
+    private final List<BurgerTopping> burgerToppingList = new ArrayList<>();
 
     public void addBurgerString(String burgerOrderText) {
         Scanner scanner = new Scanner(burgerOrderText);

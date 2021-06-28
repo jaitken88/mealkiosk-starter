@@ -91,8 +91,8 @@ public class MealOrder {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         for (MenuItem menuItem : items) {
-            stringBuilder.append(menuItem);
-            if(items.size()>1) {
+            stringBuilder.append(menuItem.toString());
+            if (items.size() > 1) {
                 stringBuilder.append(", ");
             }
         }
